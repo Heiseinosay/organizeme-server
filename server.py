@@ -6,6 +6,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://famous-centaur-833c2c.netlify.app"]}})
+
 @app.route("/members")
 def members():
     # connect_to_db() 
