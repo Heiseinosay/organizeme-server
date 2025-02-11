@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from dbutils import connect_to_db, create_account, login_auth, select_all_subjects, insert_subject, edit_subject_name, fetch_subject_name, delete_subject_name, add_task, select_subject_task, update_selected_task, delete_task_name, task_accomplished, select_all_accomplished, calendar_task, insert_notification, get_user_summary, get_user_notification, search_item
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/members")
 def members():
